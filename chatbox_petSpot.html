@@ -20,7 +20,7 @@
             </div>
             <div id="chatSelec_container">
                 <!-- HERE IT IS THE JAVASCRIPT DIV GENERATOR FOR CHAT SELECTORS -->
-                <div class="chatSelec_nodes"></div>
+                <div id="chatSelec_nodes"></div>
                 <div class="chatSelec_nodes"></div>
                 <div class="chatSelec_nodes"></div>
                 <div class="chatSelec_nodes"></div>
@@ -32,10 +32,25 @@
             </div>
         </div>
         <div id="rightSide">
-            
+            <div id="chat_container"></div>
         </div>
     </div>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script>
+        const right_container = document.getElementById('rightSide')
+        const chat_container = document.getElementById('chat_container')
+        const node_containingMessages = document.getElementById('chatSelec_nodes')
+
+        let chatVisible = false
+        node_containingMessages.addEventListener('click', function(){
+            if (chatVisible){
+                chat_container.style.display = 'none';
+            } else{
+                chat_container.style.display = 'flex';
+            }
+            chatVisible = !chatVisible;
+        });
+    </script>
 </body>
 </html>
