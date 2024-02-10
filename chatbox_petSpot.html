@@ -32,7 +32,9 @@
             </div>
         </div>
         <div id="rightSide">
-            <div id="chat_container"></div>
+            <div id="chat_container">
+                <div class="message_nodes"><p>gdsdffsdgfd</p></div>
+            </div>
         </div>
     </div>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -41,15 +43,19 @@
         const right_container = document.getElementById('rightSide')
         const chat_container = document.getElementById('chat_container')
         const node_containingMessages = document.getElementById('chatSelec_nodes')
+        const message_nodes = document.getElementsByClassName('message_nodes')
 
         let chatVisible = false
         node_containingMessages.addEventListener('click', function(){
             if (chatVisible){
-                chat_container.style.display = 'none';
+                chat_container.style.visibility = 'hidden';
+                for (let i = 0; i<message_nodes.length; i++){message_nodes[i].style.visibility = 'hidden'};
             } else{
-                chat_container.style.display = 'flex';
+                chat_container.style.visibility = 'visible';
+                for (let i = 0; i<message_nodes.length; i++){message_nodes[i].style.visibility = 'visible'};
             }
             chatVisible = !chatVisible;
+
         });
     </script>
 </body>
