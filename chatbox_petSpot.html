@@ -9,7 +9,7 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-    <script type="module" src="./script//configfirebase.js"></script>
+    <script type="module" src="./script/configfirebase.js"></script>
     <script type="module" src="./script/action.js"></script>
 </head>
 <body>
@@ -43,9 +43,12 @@
             <div id="chat_container">
                 <div class="message_nodes"><p>gdsdffsdgfd</p></div>
             </div>
-            <div id="footer">
-                <span id="send_button"><ion-icon name="send-outline"></ion-icon></span>
-            </div>
+            <!-- <form onsubmit="sendMessage(event)"> -->
+                <div id="footer">
+                    <input type="text" id="text_input_field" autofocus placefolder="digite sua mensagem..."/>
+                    <span id="send_button"><ion-icon name="send-outline"></ion-icon></span>
+                </div>
+            <!-- </form> -->
         </div>
     </div>
 </body>

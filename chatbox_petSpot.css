@@ -96,35 +96,39 @@ p{
         cursor: pointer;
     }
 
-        #rightSide .message_nodes{
-            width: 100%;
-            box-sizing: border-box;
-            height: 40px;
-            min-height: 40px;
-            background: #dfc9c9;
-            border-radius: 20px;
-            justify-content: space-between;
-            align-items: center;
-            margin: 1px;
-            padding:0 14px; 
-            visibility: hidden;
-        }
         #rightSide #chat_container{
             width: 100%;
+            min-width: 480px;
             height: 100%;
             box-sizing: border-box;
             background: #888888;
             flex-direction: column;
             overflow-y: scroll;
             overflow-x: hidden;
-            align-content: flex-start;
+            align-content: flex-end;
+            visibility: hidden;
+        }
+        #rightSide .message_nodes{
+            min-width: 5%;
+            width: fit-content;
+            min-height: 40px;
+            height: fit-content;
+            /* media carry for making the text break when hits the max
+            width avaiable on the chat_container*/
+            box-sizing: border-box;
+            background: #dfc9c9;
+            border-radius: 20px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin: 1px;
+            padding:10px 15px; 
             visibility: hidden;
         }
         #rightSide #footer{
             width: 100%;
             height: 5%;
             box-sizing: border-box;
-<<<<<<< HEAD
             background: #ededed;
             display: flex;
             flex-direction: row;
@@ -132,32 +136,24 @@ p{
             align-items: center;
             visibility: hidden;
         }
-        #rightSide #input_text_field{
+        #rightSide #text_input_field{
             width: 100%;
-            margin: 5%;
-        }
-        #rightSide #send_button{
-            width: 25px;
-            height: 25px;
-            margin: 5%;
-=======
-            background: #e7b939;
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-end;
+            margin: 5px;
+            border: none;
             visibility: hidden;
         }
         #rightSide #send_button{
             width: 25px;
             height: 25px;
->>>>>>> 0901ed4f40e5978249d6549ac5651e45800cef5d
+            color: #e7b939;
+            visibility: hidden;
             cursor: pointer;
         }
 
 
-@keyframes animaçao{
-    0%{
-        background: white}
-    50%{
-        background: green}
-}
+        @keyframes animaçao{
+            0%{
+                background: white}
+            50%{
+                background: green}
+        }
