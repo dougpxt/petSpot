@@ -3,11 +3,18 @@
 <head>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>chatbox_petSpot</title>
+    
     <link rel='stylesheet' type='text/css' href='chatbox_petSpot.css'>
+    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script type="module" src="./script//configfirebase.js"></script>
+    <script type="module" src="./script/action.js"></script>
 </head>
 <body>
     <div id='container'>
-        <div id="leftSide">
+        <aside id="leftSide">
             <div id="header">
                 <div class="user_img">
                     <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/271deea8-e28c-41a3-aaf5-2913f5f48be6/de7834s-6515bd40-8b2c-4dc6-a843-5ac1a95a8b55.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzI3MWRlZWE4LWUyOGMtNDFhMy1hYWY1LTI5MTNmNWY0OGJlNlwvZGU3ODM0cy02NTE1YmQ0MC04YjJjLTRkYzYtYTg0My01YWMxYTk1YThiNTUuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.BopkDn1ptIwbmcKHdAOlYHyAOOACXW0Zfgbs0-6BY-E" class="cover">
@@ -30,27 +37,17 @@
                 <div class="chatSelec_nodes"></div>
                 <div class="chatSelec_nodes"></div>
             </div>
-        </div>
+        </aside>
+
         <div id="rightSide">
-            <div id="chat_container"></div>
+            <div id="chat_container">
+                <div class="message_nodes"><p>gdsdffsdgfd</p></div>
+            </div>
+            <div id="footer">
+                <input type="text" id="input_text_field">
+                <button id="send_button"><ion-icon name="send-outline"></ion-icon></span>
+            </div>
         </div>
     </div>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script>
-        const right_container = document.getElementById('rightSide')
-        const chat_container = document.getElementById('chat_container')
-        const node_containingMessages = document.getElementById('chatSelec_nodes')
-
-        let chatVisible = false
-        node_containingMessages.addEventListener('click', function(){
-            if (chatVisible){
-                chat_container.style.display = 'none';
-            } else{
-                chat_container.style.display = 'flex';
-            }
-            chatVisible = !chatVisible;
-        });
-    </script>
 </body>
 </html>

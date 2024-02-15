@@ -6,6 +6,10 @@ body{
     background: orange
 
 }
+p{
+    vertical-align: middle;
+    text-align: center;
+}
 #container{
     width: 1396px;
     max-width: 100%;
@@ -15,93 +19,130 @@ body{
     display: flex;
     flex-direction: row;
 }
-#container #leftSide{
-    display: flex;
-    flex-direction: column;
-    flex: 30%;
-    height: 100%;
-    width: 100%;
-    background: white;
-}
-#container #rightSide{
-    display: flex;
-    flex: 70%;
-    background: white;
-    animation-name: animaçao;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
-}
+    #container #leftSide{
+        display: flex;
+        flex-direction: column;
+        flex: 30%;
+        height: 100%;
+        width: 100%;
+        background: white;
+    }
 
-#header{
-    width: 100%;
-    box-sizing: border-box;
-    height: 40px;
-    min-height: 40px;
-    background: #ededed;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding:0 14px;
-}
-.user_img{
-    position: relative;
-    width: 25px;
-    height: 25px;
-    border-radius:50%;
-    overflow: hidden; 
-    cursor: pointer;
-}
-.cover{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.nav_icons{
-    display:flex
-}
-.nav_icons li{
-    display: flex;
-    list-style: none;
-    cursor: pointer;
-}
-#chatSelec_container{
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-    background: #c0c0c0;
-    display: flex;
-    flex-direction: column;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    align-content: flex-start;
-}
-.chatSelec_nodes, #chatSelec_nodes{
-    width: 100%;
-    box-sizing: border-box;
-    height: 40px;
-    min-height: 40px;
-    background: #dfc9c9;
-    border-radius: 20px;
-    justify-content: space-between;
-    align-items: center;
-    margin: 1px;
-    padding:0 14px;
-    cursor: pointer;
-}
-#rightSide #chat_container{
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-    background: #888888;
-    display: none;
-    flex-direction: column;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    align-content: flex-start;
-}
+        #container #rightSide{
+            display: flex;
+            flex-direction: column;
+            flex: 70%;
+            background: white;
+            animation-name: animaçao;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+        }
+
+    #leftSide #header{
+        width: 100%;
+        box-sizing: border-box;
+        height: 40px;
+        min-height: 40px;
+        background: #ededed;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding:0 14px;
+    }
+    #leftSide .user_img{
+        position: relative;
+        width: 25px;
+        height: 25px;
+        border-radius:50%;
+        overflow: hidden; 
+        cursor: pointer;
+    }
+    #leftSide .cover{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    #leftSide .nav_icons, span{
+        display:flex;
+    }
+    #leftSide .nav_icons span{
+        cursor: pointer;
+    }
+    #leftSide #chatSelec_container{
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        background: #c0c0c0;
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        align-content: flex-start;
+    }
+    #leftSide .chatSelec_nodes, #chatSelec_nodes{
+        width: 100%;
+        box-sizing: border-box;
+        height: 40px;
+        min-height: 40px;
+        background: #dfc9c9;
+        border-radius: 20px;
+        justify-content: space-between;
+        align-items: center;
+        margin: 1px;
+        padding:0 14px;
+        cursor: pointer;
+    }
+
+        #rightSide .message_nodes{
+            width: 100%;
+            box-sizing: border-box;
+            height: 40px;
+            min-height: 40px;
+            background: #dfc9c9;
+            border-radius: 20px;
+            justify-content: space-between;
+            align-items: center;
+            margin: 1px;
+            padding:0 14px; 
+            visibility: hidden;
+        }
+        #rightSide #chat_container{
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            background: #888888;
+            flex-direction: column;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            align-content: flex-start;
+            visibility: hidden;
+        }
+        #rightSide #footer{
+            width: 100%;
+            height: 5%;
+            box-sizing: border-box;
+            background: #ededed;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            visibility: hidden;
+        }
+        #rightSide #input_text_field{
+            width: 100%;
+            margin: 5%;
+        }
+        #rightSide #send_button{
+            width: 25px;
+            height: 25px;
+            margin: 5%;
+            cursor: pointer;
+        }
+
+
 @keyframes animaçao{
     0%{
         background: white}
