@@ -1,12 +1,17 @@
-  // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
-  import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
+  import { getAuth } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+  import { 
+    getDatabase, 
+    set, 
+    get,
+    push, 
+    query,
+    ref,
+    onChildAdded,
+    onValue
+  } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+//  
 
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   const firebaseConfig = {
     apiKey: "AIzaSyAB0UH8d1_ZdrS_3yIwQeyhe5dIXYcIDVc",
     authDomain: "pet-spot-dc163.firebaseapp.com",
@@ -17,9 +22,9 @@
     measurementId: "G-06W170WRX8"
   };
 
-  // Initialize Firebase
+// Initialize Firebase
   const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
   const db = getDatabase(app)
+  const auth = getAuth(app)
 
-export { db, set, ref };
+export { db, set, get, query, push, ref, onChildAdded, onValue };

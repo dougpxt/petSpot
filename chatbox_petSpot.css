@@ -10,14 +10,21 @@ p{
     vertical-align: middle;
     text-align: center;
 }
-.text_input_field{
-    width: 100%;
-    margin: 5px;
-    background-color: transparent;
-}
 #visibility_property{
     visibility: hidden;
 }
+.material-symbols-outlined{
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+}
+
+
 #container{
     width: 1396px;
     max-width: 100%;
@@ -29,33 +36,38 @@ p{
 }
     #container #leftSide{
         display: flex;
-        flex-direction: column;
-        flex: 30%;
-        height: 100%;
-        width: 100%;
-        background: white;
-    }
-
-        #container #rightSide{
-            display: flex;
             flex-direction: column;
-            flex: 70%;
+            flex: 20%;
+            height: 100%;
+            width: 100%;
             background: white;
-            animation-name: animaçao;
-            animation-duration: 10s;
-            animation-iteration-count: infinite;
         }
+        #container #rightSide{
+                display: flex;
+                flex-direction: column;
+                flex: 80%;
+                background: white;
+                animation-name: animaçao;
+                animation-duration: 10s;
+                animation-iteration-count: infinite;
+            }
+
 
     #leftSide #header_leftSide{
         width: 100%;
         box-sizing: border-box;
         height: 40px;
         min-height: 40px;
-        background: #ededed;
+        background: #888888;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding:0 14px;
+        padding:0px 14px;
+    }
+    #leftSide #text_input_searchField{
+        width: 70%;
+        background-color: transparent;
+        border-width: 0px;
     }
     #leftSide .user_img{
         position: relative;
@@ -80,30 +92,33 @@ p{
         width: 100%;
         border-radius: 20px;
         margin: 10px 10px;
-        background-color: #888888;
+        background-color: #c7c7c7;
     }
     #leftSide #chatSelec_container{
         width: 100%;
         height: 100%;
         box-sizing: border-box;
-        background: #c0c0c0;
+        background: #888888;
         display: flex;
         flex-direction: column;
         overflow-y: scroll;
         overflow-x: hidden;
         align-content: flex-start;
+        scrollbar-color: rgb(76, 76, 76) transparent;
+        scrollbar-width:thin;
     }
     #leftSide .chatSelec_nodes, #chatSelec_nodes{
-        width: 100%;
+        width: 95%;
         box-sizing: border-box;
         height: 40px;
         min-height: 40px;
-        background: #dfc9c9;
+        background: #c7c7c7;
         border-radius: 20px;
+        display: flex;
         justify-content: space-between;
         align-items: center;
-        margin: 1px;
-        padding:0 14px;
+        margin: 5px;
+        padding: 0 14px;
         cursor: pointer;
     }
 
@@ -112,11 +127,13 @@ p{
             min-width: 480px;
             height: 100%;
             box-sizing: border-box;
-            background: #888888;
+            background: #c7c7c7;
             flex-direction: column;
             overflow-y: scroll;
             overflow-x: hidden;
             align-content: flex-end;
+            scrollbar-color: rgb(76, 76, 76) transparent;
+            scrollbar-width:thin;
         }
         #rightSide #header_rightSide{
             width: 100%;
@@ -129,21 +146,26 @@ p{
             align-items: center;
             padding:0 14px;
         }
+        #rightSide .user_img{
+            position: relative;
+            width: 25px;
+            height: 25px;
+            border-radius:50%;
+            overflow: hidden; 
+            cursor: pointer;
+        }
         #rightSide .message_nodes{
             min-width: 5%;
             width: fit-content;
             min-height: 40px;
             height: fit-content;
-            /* media carry for making the text break when hits the max
-            width avaiable on the chat_container*/
             box-sizing: border-box;
-            background: #dfc9c9;
+            word-wrap: break-word;
+            background: #888888;
             border-radius: 20px;
-            display: flex;
-            justify-content: flex-end;
             align-items: center;
-            margin: 1px;
-            padding:10px 15px; 
+            margin: 10px;
+            padding:5px 15px 5px 15px; 
         }
         #rightSide #footer{
             width: 100%;
@@ -154,6 +176,11 @@ p{
             flex-direction: row;
             justify-content: flex-end;
             align-items: center;
+        }
+        #rightSide #text_input_messageField{
+            width: 100%;
+            margin: 5px;
+            background-color: transparent;
         }
         #rightSide #send_button{
             width: 25px;
@@ -169,3 +196,7 @@ p{
             50%{
                 background: green}
         }
+
+@media (max-width: 1000px) {
+    
+}

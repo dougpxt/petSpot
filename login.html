@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Spot Login</title>
+    <link rel="stylesheet" href="login.css">
+    <script type="module" src="./script/action.js"></script>
+</head>
+
+<body id="body-login">
+    <div class="contaner" id="login-modal">
+        <div id="efeito">
+            <h1>Petspot</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi officiis, in sapiente ducimus itaque quibusdam quo repudiandae ullam id perspiciatis, minima voluptate natus obcaecati pariatur quos consequatur modi doloremque dolore!</p>
+        </div>
+        
+        <div class="criar-cadastro" id="cadastrar">
+                <h2>Criar Cadastro</h2>
+                <input type="text" id="nome" placeholder="Digite seu nome">
+                <input type="email" id="email" placeholder="Digite seu Email">
+                <input type="password" id="senha" placeholder="Digite sua senha">
+                <input type="password" id="confirmarSenha" placeholder="Confirme sua senha">
+                <div class="btn" id="botaoCadastrar">
+                    Cadastrar
+                </div>
+        </div>
+        
+
+        <div id="fazer-login">
+            <h2>PetSpot</h2>
+            <input type="email" id="email" placeholder="Digite seu Email">
+            <input type="password" id="pwd" placeholder="Digite sua senha">
+            <div class="btn">
+                Entrar
+            </div>
+            <a href="#" id="botaoAnimacao" >
+                Não tem cadastro?
+            </a>
+        </div>
+    </div>
+
+
+<!--  -->
+    <script>
+        console.log('External script is executing');
+
+        var mudar = document.getElementById("efeito");
+        var t_login = document.getElementById("fazer-login");
+        var t_cadastrar = document.getElementById("cadastrar");
+
+        var botaoAnimacao = document.getElementById("botaoAnimacao")
+        var botaoCadastrar = document.getElementById(`botaoCadastrar`)
+        // 
+        botaoAnimacao.addEventListener('click', function(){
+                animacao();
+        })
+        botaoCadastrar.addEventListener('click', function(){
+                cadastrar();
+        })
+
+        function menu(){
+            if(document.getElementById("link-menu").style.display == "none"){
+            document.getElementById("link-menu").style.display = "flex";
+            } else {
+            document.getElementById("link-menu").style.display = "none";
+            };
+            // EXECUTA A ANIMAÇÃO DA TELA DE LOGIN E ATIVA O ZINDEX
+        };
+
+        function animacao(){
+            t_login.style.zIndex = "-1";
+            mudar.style.left = "400px";
+            t_cadastrar.style.zIndex = "-1";
+
+            mudar.style.transition ="2s"
+
+            mudar.style.zIndex = "5";
+            
+            mudar.addEventListener('transitionend', function() {
+                t_cadastrar.style.zIndex = "1";
+            });
+        };
+
+        // 
+        function cadastrar(){
+            console.log('working')
+            var nome = document.getElementById('nome').value;
+            var email = document.getElementById('email').value;
+            var senha = document.getElementById('senha').value;
+            // var confirmarSenha = document.getElementById('confirmarSenha').value;
+            
+            writeUserData(nome, email, senha);
+
+            nome.value = ''
+            email.value = ''
+            pwd.value = ''
+            
+            t_cadastrar.style.zIndex = "-1";
+            t_login.style.zIndex = "1";
+            mudar.style.left = "0px";
+            };
+
+            function LoginM(){
+            var tela_login = document.getElementById("login-modal");
+        };
+    </script>
+</body>
+</html>
